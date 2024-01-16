@@ -1,6 +1,12 @@
+import 'package:ad_singleton/Screen/my_material_app.dart';
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // initialize without device test ids
+  Admob.initialize();
+
   runApp(const MyApp());
 }
 
@@ -42,8 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-
-    AdMobService
   }
 
   @override
@@ -70,7 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const Text('AdMobText'),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return MyMaterialApp();
+                  }),
+                );
+              },
               child: const Text("Show Banner Ad"),
             )
           ],
