@@ -254,7 +254,7 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
                 child: Scrollbar(
                   child: ListView.builder(
                     padding: EdgeInsets.all(20.0),
-                    itemCount: 1000,
+                    itemCount: 60,
                     itemBuilder: (BuildContext context, int index) {
                       if (index != 0 && index % 6 == 0) {
                         return Column(
@@ -360,6 +360,7 @@ Android: ca-app-pub-3940256099942544/5224354917
 iOS: ca-app-pub-3940256099942544/1712485313
 */
 
+// 배너 광고
 String? getBannerAdUnitId() {
   if (Platform.isIOS) {
     return 'ca-app-pub-3940256099942544/2934735716';
@@ -369,15 +370,17 @@ String? getBannerAdUnitId() {
   return null;
 }
 
+// 전면 광고
 String? getInterstitialAdUnitId() {
   if (Platform.isIOS) {
-    return '광고단위 key';
+    return 'ca-app-pub-3940256099942544/4411468910';
   } else if (Platform.isAndroid) {
-    return '광고단위 key';
+    return 'ca-app-pub-3940256099942544/1033173712';
   }
   return null;
 }
 
+// 보상형 광고
 String? getRewardBasedVideoAdUnitId() {
   if (Platform.isIOS) {
     return 'ca-app-pub-3940256099942544/1712485313';
